@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import Input from "../Input";
 import Button from "../Button";
-import UploadPicture from "./UploadPicture";
 import TermRow from "./TermRow";
 
 function TermsDefination() {
