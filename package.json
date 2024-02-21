@@ -1,6 +1,6 @@
 {
+  "homepage": "https://triveshwasnik.github.io/flashcardgenerator/",
   "name": "flashcardgenerator",
-  "homepage": "https://TriveshWasnik.github.io/flashcardgenerator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
