@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media print {
+  #printdoc {
+    margin: 50px;
+    padding: 50px;
+  }
+
+  @page {
+    margin: 50px;
+    padding: 50px;
+  }
+}

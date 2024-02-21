@@ -1,57 +1,71 @@
 import React from "react";
 import Container from "../Container/Container";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Button from "../Button";
 
 function Header() {
-  const navigate = useNavigate();
-  const navItems = [
-    {
-      name: "Create New",
-      slug: "/",
-      active: true,
-    },
-    {
-      name: "My Flashcard",
-      slug: "/my-flashcard",
-      active: true,
-    },
-  ];
   return (
     <>
       <div className="py-6 bg-white">
         <Container>
-          <nav className="flex">
+          <nav className="flex w-full">
             <div className="mr-4">
+              {/* Logo : Home Page Link */}
               <Link to="/">
-                <h3 className="text-3xl font-bold">
+                <h3 className="text-2xl md:text-3xl font-bold">
                   <span className=" bg-[#cc1313] text-[#fff] px-1">Al</span>
                   maBetter
                 </h3>
               </Link>
             </div>
+            {/* Dummy login and Signup Button */}
             <div className="ml-auto">
-              <Button className="w-full">Login/Signup</Button>
+              <Button className="px-2 md:px-4 py-2 rounded w-[140px]  md:text-[16px] ">
+                Login/Signup
+              </Button>
             </div>
           </nav>
         </Container>
       </div>
       <header className="py-10">
         <Container>
-          <h3 className="font-bold text-[24px]">Create Flashcard</h3>
-          <ul className="flex py-4 border-b-2 border-[#ccc] ">
-            {navItems.map((menu) =>
-              menu.active ? (
-                <li
-                  key={menu.name}
-                  className={`px-4 text-[16px] font-bold text-[#777]`}
-                >
-                  <button onClick={() => navigate(menu.slug)}>
-                    {menu.name}
-                  </button>
-                </li>
-              ) : null
-            )}
+          <h3 className="font-bold text-[20px] md:text-[24px]">
+            Create Flashcard
+          </h3>
+          <ul className="flex border-b-2 py-4 border-[#ccc] ">
+            {/* Create New and My Flashcard Menu  */}
+            <li
+              className={`px-2 md:px-4 text-[14px]  md:text-[16px] font-bold `}
+            >
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `${
+                    isActive
+                      ? "text-[#cc1313] border-b-4 border-[#cc1313] "
+                      : "text-[#777]"
+                  } pb-4  `
+                }
+              >
+                Create New
+              </NavLink>
+            </li>
+            <li
+              className={`px-2 md:px-4 text-[14px] md:text-[16px] font-bold `}
+            >
+              <NavLink
+                to="/my-flashcard"
+                className={({ isActive }) =>
+                  `${
+                    isActive
+                      ? "text-[#cc1313] border-b-4 border-[#cc1313] "
+                      : "text-[#777]"
+                  } pb-4 `
+                }
+              >
+                My Flashcard
+              </NavLink>
+            </li>
           </ul>
         </Container>
       </header>
