@@ -21,12 +21,8 @@ function UploadPicture({
     if (file) {
       const reader = new FileReader();
       reader.onloadend = function () {
-        //const imagePath = reader.result;
-        // console.log("Image Path", imagePath);
-        //console.log("File:", file);
         setImg(reader.result);
         setFieldValue(name, reader.result);
-        //localStorage.setItem(name, JSON.stringify(imgFile));
       };
       reader.readAsDataURL(file);
     }
